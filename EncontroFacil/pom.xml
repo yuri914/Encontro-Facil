@@ -29,6 +29,7 @@
 		</license>
 	</licenses>
 	<properties>
+		<slf4j.version>1.6.4</slf4j.version>
 		<wicket.version>6.15.0</wicket.version>
 		<spring.version>3.1.2.RELEASE</spring.version>
 		<jetty.version>7.6.13.v20130916</jetty.version>
@@ -115,13 +116,25 @@
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.4</version>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
+			<version>1.2.14</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- JUNIT DEPENDENCY FOR TESTING -->

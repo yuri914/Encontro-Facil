@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="utf-8" />
+<title>Encontro Fácil</title>
+
+</head>
+<body background="img/bg-encontroFacil.png">
+	<form class="form-inline" wicket:id="formulario">
+	
+		<div wicket:id="feedback"></div>
+		
+		<div wicket:id="loginAcessoPanel"></div>
+		
+		<div class="clear"></div>
+		
+		<hr />
+		
+		<fieldset>
+
+			<legend class="center">Cadastre-se</legend>
+			<div id="divFormRegister" class="container-fluid form-horizontal">
+
+				<div class="control-group">
+					<label class="control-label" wicket:for="nome">Nome:</label>
+					<div class="controls">
+						<input maxlength="100" wicket:id="nome" type="text" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" wicket:for="genero">Genero:</label>
+					<div class="controls">
+						<span wicket:id="genero"></span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" wicket:for="dataNascimento">Nascimento:</label>
+					<div class="controls">
+						<input id="inputNasc" maxlength="10" wicket:id="dataNascimento" type="text" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" wicket:for="cpf">CPF:</label>
+					<div class="controls">
+						<input id="inputCpf" maxlength="11" wicket:id="cpf" type="text" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" wicket:for="login">Login:</label>
+					<div class="controls">
+						<input type="text" maxlength="20" wicket:id="login" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" wicket:for="senha">Senha:</label>
+					<div class="controls">
+						<input wicket:id="senha" maxlength="10" type="text" />
+					</div>
+				</div>
+
+				<input class="btn btn-success offset2" type="submit" wicket:id="btnCadastrar" value="Cadastrar" />
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
