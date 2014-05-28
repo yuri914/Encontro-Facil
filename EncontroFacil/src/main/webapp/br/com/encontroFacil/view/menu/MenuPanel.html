@@ -4,9 +4,13 @@
 			<a class="brand" href="#">Encontro Fácil</a>
 			<ul class="nav">
 				<li class="active"><a href="#">Início</a></li>
-				<li><a href="#" rel="balloon" data-placement="bottom" data-content="sample content." onclick="$('#example').balloon('show')">Link</a></li>
 				<li><a wicket:id="linkSair">Sair</a></li>
-				<li><a href="#"><i class="icon-wrench icon-white"></i></a></li>
+				<li>
+					<div class="dropdown">
+						<a href="#" onclick="$('.dropdown-toggle').dropdown()"><i class="icon-wrench icon-white"></i></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"></ul>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>

@@ -16,6 +16,10 @@ html, body, div {
 	height: 657px;
 }
 
+body {
+	background: #b3bead !important;
+}
+
 <!--
 CSS Menu -->ul,li {
 	padding: 0;
@@ -65,6 +69,19 @@ CSS Menu -->ul,li {
 
 .alinharDireita {
 	float: right;	
+}
+
+.alinharTextoDireita {
+	text-align: right !important;
+}
+
+#containerEndereco {
+	width: 85% !important;
+	margin: 0 auto !important;
+}
+
+#containerEndereco label {
+	margin-top: 3px;
 }
 
 .clear {
@@ -120,6 +137,10 @@ CSS Menu -->ul,li {
 	margin-bottom: 5px !important;	
 }
 
+.delta2 {
+	margin-top: 2px !important;
+}
+
 .delta3 {
 	margin-top: 3px !important;
 }
@@ -150,4 +171,16 @@ CSS Menu -->ul,li {
 
 .alpha40 {
 	margin-left: 40px !important;
+}
+
+.beta3 {
+	margin-right: 3px !important;
+}
+
+.gama5 {
+	margin: 5px !important;
+}
+
+.gama10 {
+	margin: 10px !important;
 }

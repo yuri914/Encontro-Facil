@@ -49,9 +49,10 @@ public class LoginAcessoPanel extends Panel {
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form)
 			{
-				if(autenticarUsuario())
+				Usuario usuarioEncontrado = autenticarUsuario(); 
+				if(usuarioEncontrado != null)
 				{
-					getSession().setAttribute("usuario", getUsuario());
+					getSession().setAttribute("usuarioSessao", usuarioEncontrado);
 					setResponsePage(new BasePage());
 				}
 				else
@@ -65,9 +66,9 @@ public class LoginAcessoPanel extends Panel {
 	}
 
 	/** Autentica o usuário */
-	private boolean autenticarUsuario()
+	private Usuario autenticarUsuario()
 	{
-		return usuarioService.autenticarUsuario(getUsuario()) != null;
+		return usuarioService.autenticarUsuario(getUsuario());
 	}
 	
 	private Usuario getUsuario()

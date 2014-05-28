@@ -57,6 +57,10 @@ public class JPAGenericoDao<T extends Serializable> implements GenericoDao<T> {
 	public List<?> buscarPorJpql(String jpql, Object... parans) {
 		return this.criarQuery(jpql, parans).getResultList();
 	}
+	
+	public Object buscarUnicoRegistroPorJpql(String jpql, Object... parans) {
+		return this.criarQuery(jpql, parans).getSingleResult();
+	}
 
 	@Override
 	@Transactional

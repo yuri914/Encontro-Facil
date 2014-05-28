@@ -8,6 +8,6 @@ import br.com.encontroFacil.persistence.generico.GenericoDao;
 
 public interface IDaoCidade extends GenericoDao<Cidade> {
 
-	public List<Cidade> buscarListaCidadesBanco(Estado estado);
+	public List<Cidade> buscarListaCidades(Estado estado);
 	
 }

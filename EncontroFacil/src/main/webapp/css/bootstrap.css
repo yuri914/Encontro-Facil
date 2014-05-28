@@ -364,8 +364,16 @@ a:hover {
   width: 220px;
 }
 
+.span 2_5 {
+	width: 180px;
+}
+
 .span2 {
   width: 140px;
+}
+
+.span1_5 {
+	width: 100px;
 }
 
 .span1 {
@@ -1042,19 +1050,16 @@ form {
 fieldset {
   padding: 0;
   margin: 0;
-  border: 0;
+  border: 1px solid #e5e5e5;
 }
 
 legend {
   display: block;
-  width: 100%;
   padding: 0;
   margin-bottom: 20px;
   font-size: 21px;
   line-height: 40px;
   color: #333333;
-  border: 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 legend small {
@@ -1348,7 +1353,7 @@ textarea,
 }
 
 .controls-row [class*="span"] + [class*="span"] {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 input.span12,

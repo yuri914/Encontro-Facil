@@ -19,7 +19,7 @@ public class DaoCidadeImpl extends JPAGenericoDao<Cidade> implements IDaoCidade,
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Cidade> buscarListaCidadesBanco(Estado estado) {
+	public List<Cidade> buscarListaCidades(Estado estado) {
 		String jpql = "From Cidade c where c.estado.id = ?";
 		return (List<Cidade>) super.buscarPorJpql(jpql, estado.getId());
 	}
