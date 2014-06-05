@@ -49,7 +49,7 @@ public class Usuario implements Serializable {
 	private String senha;
 	
 	@Column(name="data_cadastro")
-	private Date data_cadastro;
+	private Date dataCadastro;
 
 	@Transient
 	private Integer idade;
@@ -110,12 +110,12 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 	}
 
-	public Date getData_cadastro() {
-		return data_cadastro;
+	public Date getDataCadastro() {
+		return dataCadastro;
 	}
 
-	public void setData_cadastro(Date data_cadastro) {
-		this.data_cadastro = data_cadastro;
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
 	/**

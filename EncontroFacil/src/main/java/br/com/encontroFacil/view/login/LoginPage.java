@@ -32,7 +32,7 @@ public class LoginPage extends WebPage {
 	@SpringBean
 	private UsuarioService usuarioService;
 	private FeedbackPanel feedback;
-	private Form<Usuario> formulario;
+	private Form<Usuario> formularioCadastro;
 	private Usuario usuario;
 
 	public LoginPage()
@@ -42,41 +42,41 @@ public class LoginPage extends WebPage {
 
 	private void criarPagina()
 	{
-		formulario = new Form<Usuario>("formulario", new CompoundPropertyModel<Usuario>(getUsuario()));
-		add(formulario);
+		formularioCadastro = new Form<Usuario>("formularioCadastro", new CompoundPropertyModel<Usuario>(getUsuario()));
+		add(formularioCadastro);
 		
 		feedback = new FeedbackPanel("feedback");
 		feedback.setOutputMarkupId(true);
-		formulario.add(feedback);
+		add(feedback);
 		
-		formulario.add(new LoginAcessoPanel("loginAcessoPanel", new Usuario(), feedback));
+		add(new LoginAcessoPanel("loginAcessoPanel", new Usuario(), feedback));
 		
 		criarComponentes();
 	}
 	
 	private void criarComponentes()
 	{
-		formulario.add(new TextField<String>("nome"));
+		formularioCadastro.add(new TextField<String>("nome"));
 		
-		formulario.add(new RadioChoice<Genero>("genero", Arrays.asList(Genero.values()), new ChoiceRenderer<Genero>("descricao")).setSuffix(""));
+		formularioCadastro.add(new RadioChoice<Genero>("genero", Arrays.asList(Genero.values()), new ChoiceRenderer<Genero>("descricao")).setSuffix(""));
 		
-		formulario.add(new TextField<String>("dataNascimento"));
+		formularioCadastro.add(new TextField<String>("dataNascimento"));
 		
-		formulario.add(new TextField<Long>("cpf"));
+		formularioCadastro.add(new TextField<Long>("cpf"));
 		
-		formulario.add(new TextField<String>("login"));
+		formularioCadastro.add(new TextField<String>("login"));
 		
-		formulario.add(new TextField<String>("senha"));
+		formularioCadastro.add(new TextField<String>("senha"));
 		
-		formulario.add(new AjaxButton("btnCadastrar") {
+		formularioCadastro.add(new AjaxButton("btnCadastrar") {
 
 			private static final long serialVersionUID = -4309959029136917439L;
 			
 			@Override
 			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
-				formulario.getModelObject().setData_cadastro(new Date());
-				usuarioService.salvarUsuario(formulario.getModelObject());
-				getSession().setAttribute("usuarioSessao", formulario.getModelObject());
+				formularioCadastro.getModelObject().setDataCadastro(new Date());
+				usuarioService.salvarUsuario(formularioCadastro.getModelObject());
+				getSession().setAttribute("usuarioSessao", formularioCadastro.getModelObject());
 				setResponsePage(new BasePage());
 			}
 			
@@ -98,7 +98,8 @@ public class LoginPage extends WebPage {
 	public void renderHead(IHeaderResponse response) {
 		response.render(CssHeaderItem.forUrl("css/geral.css"));
 		response.render(CssHeaderItem.forUrl("css/bootstrap.css"));
-		response.render(CssHeaderItem.forUrl("css/animate.css"));
+		response.render(CssHeaderItem.forUrl("css/signinTemplate.css"));
+		response.render(CssHeaderItem.forUrl("css/960.css"));
 		response.render(JavaScriptHeaderItem.forUrl("js/numeric.js"));
 		response.render(JavaScriptHeaderItem.forUrl("js/bootstrap.js"));
 		response.render(JavaScriptHeaderItem.forUrl("js/bootstrap.min.js"));

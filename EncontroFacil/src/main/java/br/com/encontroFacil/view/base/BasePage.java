@@ -38,8 +38,9 @@ public class BasePage extends WebPage {
 	
 	public void renderHead(IHeaderResponse response) {
 		response.render(CssHeaderItem.forUrl("css/geral.css"));
+		response.render(CssHeaderItem.forUrl("css/960.css"));
 		response.render(CssHeaderItem.forUrl("css/bootstrap.css"));
-		response.render(CssHeaderItem.forUrl("css/animate.css"));
+		response.render(CssHeaderItem.forUrl("css/signinTemplate.css"));
 		response.render(JavaScriptHeaderItem.forUrl("js/bootstrap.js"));
 	}
 }

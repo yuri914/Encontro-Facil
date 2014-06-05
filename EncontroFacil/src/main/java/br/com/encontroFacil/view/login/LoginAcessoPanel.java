@@ -21,11 +21,12 @@ public class LoginAcessoPanel extends Panel {
 	@SpringBean
 	private UsuarioService usuarioService;
 	private FeedbackPanel feedback;
+	private Form<Usuario> formularioLogin;
 	private Usuario usuario;
 
 	public LoginAcessoPanel(String id, Usuario usuario, FeedbackPanel feedback)
 	{
-		super(id, new CompoundPropertyModel<Usuario>(usuario));
+		super(id);
 		this.usuario = usuario;
 		this.feedback = feedback;
 		criarPagina();
@@ -33,16 +34,19 @@ public class LoginAcessoPanel extends Panel {
 
 	private void criarPagina()
 	{
+		formularioLogin = new Form<Usuario>("formularioLogin", new CompoundPropertyModel<Usuario>(usuario));
+		add(formularioLogin);
+		
 		criarComponentes();
 	}
 
 	private void criarComponentes()
 	{
-		add(new TextField<String>("login"));
+		formularioLogin.add(new TextField<String>("login"));
 		
-		add(new PasswordTextField("senha").setRequired(false));
+		formularioLogin.add(new PasswordTextField("senha").setRequired(false));
 		
-		add(new AjaxButton("entrar"){
+		formularioLogin.add(new AjaxButton("entrar"){
 
 			private static final long serialVersionUID = -5366193047654914826L;
 			
@@ -61,7 +65,6 @@ public class LoginAcessoPanel extends Panel {
 					target.add(feedback);
 				}
 			}
-
 		});
 	}
 

@@ -3,6 +3,7 @@ package br.com.encontroFacil.view.menu;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.Panel;
 
+import br.com.encontroFacil.view.base.BasePage;
 import br.com.encontroFacil.view.login.LoginPage;
 
 public class MenuPanel extends Panel {
@@ -28,7 +29,17 @@ public class MenuPanel extends Panel {
 				getSession().invalidateNow();
 				setResponsePage(new LoginPage());
 			}
+		});
+		
+		add(new Link<Void>("linkHome"){
 			
+			private static final long serialVersionUID = 865440152960195947L;
+
+			@Override
+			public void onClick()
+			{
+				setResponsePage(new BasePage());
+			}
 		});
 	}
 

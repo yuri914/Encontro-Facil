@@ -1,15 +1,28 @@
 <wicket:panel>
 	<div>
-		<div>
-			<h3 class="animacao1 alinharEsquerda grid2 alpha40">Encontro Fácil</h3>		
-		</div>
-	
-		<div id="divLoginSystem" class="alinharDireita grid5">
-				<label wicket:for="login">Login:</label>
-				<input type="text" wicket:id="login" />
-				<label wicket:for="senha">Senha:</label> 
-				<input type="password" wicket:id="senha" />
-				<input class="btn btn-success" type="submit" wicket:id="entrar" value="Entrar" />
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Encontro Fácil</a>
+				</div>
+				<div class="alpha700 delta7 navbar-collapse collapse">
+					<form wicket:id="formularioLogin" class="navbar-form navbar-right" role="form">
+						<div class="form-group">
+							<input wicket:id="login" type="text" placeholder="Login" class="form-control">
+						</div>
+						<div class="form-group">
+							<input wicket:id="senha" type="password" placeholder="Senha" class="form-control">
+						</div>
+						<button type="submit" wicket:id="entrar" class="btn btn-success">Entrar</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </wicket:panel>

@@ -5,67 +5,58 @@
 <title>Encontro Fácil</title>
 
 </head>
-<body background="img/bg-encontroFacil.png">
-	<form class="form-inline" wicket:id="formulario">
-	
+<body background="images/bg-encontroFacil.png">
 		<div wicket:id="feedback"></div>
 		
-		<div wicket:id="loginAcessoPanel"></div>
+		<div class="form-inline">
+			<div wicket:id="loginAcessoPanel"></div>
+		</div>
 		
 		<div class="clear"></div>
 		
-		<hr />
-		
-		<fieldset>
-
-			<legend class="center">Cadastre-se</legend>
-			<div id="divFormRegister" class="container-fluid form-horizontal">
-
-				<div class="control-group">
-					<label class="control-label" wicket:for="nome">Nome:</label>
-					<div class="controls">
-						<input maxlength="100" wicket:id="nome" type="text" />
+		<div id="panelCadastro" class="padding-left173 delta100 container_16">
+			<form wicket:id="formularioCadastro" class="formulario" role="form">
+				<div class="grid_3 alpha10">
+					<h3>Cadastre-se</h3>
+				</div>
+				
+				<div class="clear"></div>
+				
+				<div class="grid_12">
+					<div class="grid_6">
+						<input type="text" wicket:id="nome" class="form-control" placeholder="Nome" autofocus>
+					</div>
+					<div class="grid_4"> 
+						<span class="delta7" wicket:id="genero"></span>
 					</div>
 				</div>
-
-				<div class="control-group">
-					<label class="control-label" wicket:for="genero">Genero:</label>
-					<div class="controls">
-						<span wicket:id="genero"></span>
+				
+				<div class="clear"></div>
+				
+				<div class="grid_12">
+					<div class="grid_6">
+						<input wicket:id="cpf" maxlength="11" type="text" class="form-control" placeholder="Cpf">
+					</div>
+					<div class="grid_4">
+						<input wicket:id="dataNascimento" type="text" class="form-control" placeholder="Data de nascimento">						
 					</div>
 				</div>
-
-				<div class="control-group">
-					<label class="control-label" wicket:for="dataNascimento">Nascimento:</label>
-					<div class="controls">
-						<input id="inputNasc" maxlength="10" wicket:id="dataNascimento" type="text" />
+				
+				<div class="clear"></div>
+				
+				<div class="grid_12">
+					<div class="grid_5">				
+						<input wicket:id="login" maxlength="20" type="text" class="form-control" placeholder="Login">
+					</div>
+					<div class="grid_5">
+						<input wicket:id="senha" maxlength="10" type="text" class="form-control" placeholder="Senha">
 					</div>
 				</div>
-
-				<div class="control-group">
-					<label class="control-label" wicket:for="cpf">CPF:</label>
-					<div class="controls">
-						<input id="inputCpf" maxlength="11" wicket:id="cpf" type="text" />
-					</div>
+				
+				<div class="grid_10 alpha10">
+					<input class="btn btn-lg btn-primary btn-block" type="submit" wicket:id="btnCadastrar" value="Cadastrar" />
 				</div>
-
-				<div class="control-group">
-					<label class="control-label" wicket:for="login">Login:</label>
-					<div class="controls">
-						<input type="text" maxlength="20" wicket:id="login" />
-					</div>
-				</div>
-
-				<div class="control-group">
-					<label class="control-label" wicket:for="senha">Senha:</label>
-					<div class="controls">
-						<input wicket:id="senha" maxlength="10" type="text" />
-					</div>
-				</div>
-
-				<input class="btn btn-success offset2" type="submit" wicket:id="btnCadastrar" value="Cadastrar" />
-			</div>
-		</fieldset>
-	</form>
+			</form>
+		</div>
 </body>
 </html>
