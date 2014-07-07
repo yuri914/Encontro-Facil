@@ -102,8 +102,5 @@ public class LoginPage extends WebPage {
 		response.render(CssHeaderItem.forUrl("css/960.css"));
 		response.render(JavaScriptHeaderItem.forUrl("js/numeric.js"));
 		response.render(JavaScriptHeaderItem.forUrl("js/bootstrap.js"));
-		response.render(JavaScriptHeaderItem.forUrl("js/bootstrap.min.js"));
-		response.render(JavaScriptHeaderItem.forUrl("js/jquery-1.11.1.min.js"));
-		response.render(JavaScriptHeaderItem.forUrl("js/jquery.maskedinput-1.1.4.pack.js"));
 	}
 }

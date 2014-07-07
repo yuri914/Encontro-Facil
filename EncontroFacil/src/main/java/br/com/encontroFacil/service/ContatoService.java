@@ -17,23 +17,26 @@ public class ContatoService implements Serializable {
 	
 	@Autowired
 	private IDaoContato daoContato;
+	
+	@Autowired
+	private AuxiliarService auxService;
 
 	public void salvarContato(Contato contato){
 		daoContato.salvar(contato);
 	}
 	
 	public Contato recuperarContatoUsuario(Usuario usuario){
+		Contato contato = new Contato();
 		if(!daoContato.recuperarContatoUsuario(usuario).isEmpty())
 		{
-			return daoContato.recuperarContatoUsuario(usuario).get(0);
+			contato = daoContato.recuperarContatoUsuario(usuario).get(0);
 		}
-		return null;
+		return contato;
 	}
 
 	public EnderecoVO buscarCep(Integer cep)
 	{
-		// TODO Método para consumir o webService dos correios e recuperar o endereço para o cep informado
-		return null;
+		return auxService.recuperarEndereco(cep);
 	}
 	
 }

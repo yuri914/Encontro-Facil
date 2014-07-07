@@ -3869,6 +3869,15 @@ img.data,span.localizar  {
     cursor: pointer;
 }
 
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
 .nav-justified {
   background-color: #eee;
   border: 1px solid #ccc;

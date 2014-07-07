@@ -2,16 +2,19 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
 	<meta name="viewport" content="width=device-width">
+	<script src="js/jquery-1.11.1.min.js"></script>
 	<title>Encontro Fácil</title>
 </head>
 <body background="images/bg-encontroFacil.png">
 	<div id="container">
 		<div wicket:id="menuPanel"></div>
 		
+		<div class="clear"></div>
+		
 		<div wicket:id="feedback"></div>
 		
 		<div>
-			<div wicket:id="conteudoPanel"></div>
+			<wicket:child />
 		</div>
 	</div>	
 </body>

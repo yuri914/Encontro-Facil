@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 
 import br.com.encontroFacil.view.base.BasePage;
 import br.com.encontroFacil.view.login.LoginPage;
+import br.com.encontroFacil.view.perfil.PerfilPage;
 
 public class MenuPanel extends Panel {
 
@@ -39,6 +40,17 @@ public class MenuPanel extends Panel {
 			public void onClick()
 			{
 				setResponsePage(new BasePage());
+			}
+		});
+		
+		add(new Link<Void>("linkPerfil"){
+			
+			private static final long serialVersionUID = 865440152960195947L;
+
+			@Override
+			public void onClick()
+			{
+				setResponsePage(new PerfilPage());
 			}
 		});
 	}

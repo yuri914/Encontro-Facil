@@ -5,9 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +19,8 @@ public class Email implements Serializable {
 	private static final long serialVersionUID = 4726110853741375871L;
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name="id_generator", sequenceName="id_seq", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="id_generator")
 	@Column(name = "id")
 	private Integer id;
 
@@ -31,6 +34,18 @@ public class Email implements Serializable {
 	@Column(name = "primario")
 	private Boolean primario;
 
+	public Email()
+	{
+		super();
+	}
+
+	public Email(Contato contato, Boolean primario)
+	{
+		super();
+		this.contato = contato;
+		this.primario = primario;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -39,13 +54,13 @@ public class Email implements Serializable {
 		this.id = id;
 	}
 
-	/*public Contato getContato() {
+	public Contato getContato() {
 		return contato;
 	}
 
 	public void setContato(Contato contato) {
 		this.contato = contato;
-	}*/
+	}
 
 	public String getEmail() {
 		return email;
