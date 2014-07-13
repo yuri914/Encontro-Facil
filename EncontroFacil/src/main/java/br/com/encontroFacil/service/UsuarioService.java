@@ -23,6 +23,10 @@ public class UsuarioService implements Serializable {
 		daoUsuario.salvar(usuario);
 	}
 	
+	public void alterarUsuario(Usuario usuario){
+		daoUsuario.atualizar(usuario);
+	}
+	
 	public List<Usuario> buscarListaUsuarioBanco(Usuario usuarioLogado){
 		return daoUsuario.buscarTodosGrid(usuarioLogado);
 	}

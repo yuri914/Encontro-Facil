@@ -1,0 +1,96 @@
+<wicket:panel>
+	<form class="formulario" wicket:id="formulario">
+		<div class="centralizarTexto grid_10 alpha10">
+			<h3>Informações de Contato</h3>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div wicket:id="containerEndereco">
+			<div class="grid_12">
+				<div class="grid_4">
+					<input placeholder="Cep" class="form-control" wicket:id="cep" type="text"/>
+				</div>
+				<div class="grid_6">
+					<input placeholder="Logradouro" class="form-control" wicket:id="logradouro" type="text"/>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="grid_12">
+				<div class="grid_4">
+					<input placeholder="Bairro" class="form-control" wicket:id="bairro" type="text"/>
+				</div>
+				<div class="grid_6">
+					<input placeholder="Complemento" class="form-control" wicket:id="complemento" type="text"/>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="grid_13">
+				<div class="grid_1">
+					<label wicket:for="estado" class="rotulo">Estado:</label>
+				</div>
+				<div class="grid_4">
+					<select class="form-control" wicket:id="estado"></select>
+				</div>
+				<div class="grid_1">
+					<label wicket:for="cidade" class="rotulo">Cidade:</label>
+				</div>
+				<div class="grid_4">
+					<select class="form-control" wicket:id="cidade"></select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div wicket:id="containerEmails">
+			<div wicket:id="emails" class="grid_12">
+				<div class="grid_6">
+					<input placeholder="Email" class="form-control beta3" wicket:id="email" type="text"/>
+				</div>
+				<div class="grid_1">
+					<input class="delta5 alinharTextoEsquerda" type="submit" wicket:id="adicionarEmail" value="+"/>
+				</div>
+				<div class="grid_1">
+					<input class="delta5 alinharTextoEsquerda" type="submit" wicket:id="removerEmail" value="-"/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div wicket:id="containerTelefones">
+			<div wicket:id="telefones" class="grid_12">
+				<div class="grid_2">
+					<select class="form-control" wicket:id="ddd"></select>
+				</div>
+				<div class="grid_4">
+					<input placeholder="Número" class="form-control beta3" wicket:id="numero" type="text"/>
+				</div>
+				<div class="grid_1">
+					<input class="delta5" type="submit" wicket:id="adicionarTelefone" value="+"/>
+				</div>
+				<div class="grid_1">
+					<input class="delta5 alinharTextoEsquerda" type="submit" wicket:id="removerTelefone" value="-"/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div class="grid_10 alpha10">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" wicket:id="btnAtualizar" value="Atualizar"/>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div class="grid_10 alpha10">
+			<div wicket:id="feedback"></div>
+		</div>
+		
+	</form>
+</wicket:panel>

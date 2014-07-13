@@ -1,0 +1,39 @@
+<wicket:panel>
+	<form class="formulario" wicket:id="formulario">
+		<div class="centralizarTexto grid_10 alpha10">
+			<div class="grid_12">
+				<div class="grid_4">
+					<input placeholder="Senha antiga" class="form-control" wicket:id="senhaAntiga" type="text"/>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="grid_12">
+				<div class="grid_4">
+					<input placeholder="Nova senha" class="form-control" wicket:id="novaSenha" type="password"/>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="grid_12">
+				<div class="grid_4">
+					<input placeholder="Confirmação da nova senha" class="form-control" wicket:id="confirmacaoNovaSenha" type="password"/>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="grid_4 alpha10">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" wicket:id="btnAtualizar" value="Atualizar"/>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="grid_10 alpha10">
+				<div class="alert alert-success" wicket:id="feedback"></div>
+			</div>
+		</div>		
+	</form>
+</wicket:panel>
